@@ -36,6 +36,7 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "landmark", for: indexPath) as! LandmarkTableViewCell
         cell.landmarkIcon.image = UIImage(named: landMarkList[indexPath.row].imageName)
+        cell.landmarkIcon.layer.cornerRadius = 10
         cell.title.text = landMarkList[indexPath.row].name
         cell.subtitle.text = landMarkList[indexPath.row].subtitle
         

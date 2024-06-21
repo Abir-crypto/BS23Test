@@ -14,8 +14,12 @@ struct LandMark: Codable {
     let imageName: String
 }
 
-struct ReadJsonFile{
+class ReadJsonFile{
     static let shared = ReadJsonFile()
+    
+    private init(){
+        
+    }
     
     func readUserFromBundle() throws -> [LandMark]? {
         guard let url = Bundle.main.url(forResource: "landmarkData", withExtension: "json") else {
